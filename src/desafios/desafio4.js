@@ -52,7 +52,7 @@ function preencherSenha() {
 }
 
 function preencherLogin() {
-  username =  document.getElementById('login').value;
+  username = document.getElementById('login').value;
   validateLoginButton();
 }
 
@@ -70,7 +70,7 @@ function validateLoginButton() {
 }
 
 class HttpClient {
-  static async get({url, method, body = null}) {
+  static async get({ url, method, body = null }) {
     return new Promise((resolve, reject) => {
       let request = new XMLHttpRequest();
       request.open(method, url, true);
@@ -119,7 +119,7 @@ async function adicionarFilme(filmeId) {
   console.log(result);
 }
 
-async function criarRequestToken () {
+async function criarRequestToken() {
   let result = await HttpClient.get({
     url: `https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`,
     method: "GET"
